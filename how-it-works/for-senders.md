@@ -16,3 +16,6 @@ A transfer to a random one-time deposit address. That address has no connection 
 
 ## Ghost Memo (Optional)
 Attach an encrypted private message (max 140 characters) with your payment. Only the receiver can read it. Auto-deleted 24 hours after claim.
+
+## Receipt Tracker
+After sending, you can verify your deposit was processed at veertx.com/receipt. This confirms deposit status without revealing the receiver's withdrawal address or destination wallet.

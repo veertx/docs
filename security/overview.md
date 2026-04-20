@@ -19,6 +19,8 @@ Closed source:
 - Never requires senders to connect a wallet
 - Never stores unencrypted memos
 - Never links your username to your wallet on-chain
+- Never logs IP addresses or links them to on-chain identities
+- Never exposes sweep transactions to public mempool tracking — we use custom RPC routing
 
 ## Audits
 Professional third-party audit is on the roadmap. Currently all security review is internal. Bug reports welcome — contact us on X @VeerTx.
