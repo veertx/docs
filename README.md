@@ -10,6 +10,7 @@ Private payments on Solana. Send or receive SOL and USDC without linking wallets
 - [Transaction Lifecycle](technical/transaction-lifecycle.md)
 - [Agent API](developers/agent-api.md)
 - [Security & Transparency](security/overview.md)
+- [Roadmap](roadmap.md)
 
 ## What is VeerTx?
 VeerTx is a non-custodial privacy payment router on Solana. Receivers get a permanent payment link (veertx.com/pay/username). Senders pay through it. Neither party can see the other's wallet on-chain.
