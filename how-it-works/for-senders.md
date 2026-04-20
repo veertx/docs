@@ -4,7 +4,7 @@
 1. Get a VeerLink from the receiver (veertx.com/pay/username)
 2. Visit the link
 3. Select SOL or USDC, enter amount
-4. Send to the one-time deposit address shown — from any wallet, exchange, or app
+4. Send to the one-time deposit address shown, from any wallet, exchange, or app
 
 No account. No wallet connection. No sign-up.
 

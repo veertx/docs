@@ -3,7 +3,7 @@
 ## Setup (one time)
 1. Go to veertx.com/setup
 2. Connect your Solana wallet (Phantom, Solflare, Backpack, or any WalletConnect wallet)
-3. Sign a message — this generates your stealth keys locally in your browser. Your private keys never leave your device.
+3. Sign a message. This generates your stealth keys locally in your browser. Your private keys never leave your device.
 4. Choose a username
 5. Your VeerLink is ready: veertx.com/pay/yourname
 
