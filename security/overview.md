@@ -6,7 +6,7 @@ VeerTx is a privacy relay, not a fully trustless protocol. Understanding this di
 
 **What is trustless:**
 - The ZK privacy pool (Privacy Cash) is a trustless, decentralized protocol
-- Stealth key generation happens client-side in your browser, private keys never leave your device
+- Stealth key generation happens entirely client-side — your wallet signature and the private keys it derives never leave your browser. Only the derived public meta-address is sent to VeerTx. Private keys never touch our infrastructure at any point.
 - The receiver's claim is cryptographically verified - only the wallet that generated the stealth keys can claim funds
 
 **What requires trusting VeerTx:**
