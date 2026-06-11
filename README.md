@@ -2,8 +2,6 @@
 
 VeerTx is a private payment tool for crypto. You get a simple link. People pay you through it. No one can see your wallet on-chain.
 
-<figure><img src=".gitbook/assets/og_bannnnerrrrr.png" alt=""><figcaption></figcaption></figure>
-
 ## What VeerTx does
 
 When someone pays you, the payment is broken into two parts on the blockchain:
