@@ -1,35 +1,37 @@
-# Security & Transparency
+# Security overview
 
-## Trust Model
+This page is a short summary of how VeerTx protects you. For the full trust model, see [Privacy model](../technical/privacy-model.md).
 
-VeerTx is a privacy relay, not a fully trustless protocol. Understanding this distinction is important.
+## The short version
 
-**What is trustless:**
-- The ZK privacy pool (Privacy Cash) is a trustless, decentralized protocol
-- Stealth key generation happens entirely client-side — your wallet signature and the private keys it derives never leave your browser. Only the derived public meta-address is sent to VeerTx. Private keys never touch our infrastructure at any point.
-- The receiver's claim is cryptographically verified - only the wallet that generated the stealth keys can claim funds
+- Your private keys are made in your browser and stay there. VeerTx never has them.
+- Senders never connect a wallet, so there is nothing to leak on their side.
+- Funds pass through a decentralized zero-knowledge privacy pool that VeerTx does not control.
+- There is a brief window where a payment sits at a one-time deposit wallet before the pool. That window relies on VeerTx infrastructure. We are open about this.
 
-**What requires trusting VeerTx:**
-- The server briefly holds custody of funds in a throwaway deposit wallet before routing to the ZK pool
-  Because funds pass through a server-generated deposit wallet first, a theoretical breach of our backend during that window could result in loss of funds before they reach the ZK pool.
-- The server computes the stealth destination address using your public meta-address
-- Ghost Memo encryption happens server-side. The server processes the memo before encrypting it
-- We operate a strict no-logs policy, but this relies on trusting our infrastructure
-- The server stores the ephemeral public key generated during ECDH, this key is fetched by the receiver's browser to complete the stealth key derivation during claim
+## What VeerTx never does
 
-**Our commitment:**
-We are transparent about this architecture. VeerTx routes your funds through a trustless ZK pool, but the initial hop relies on our server infrastructure. We do not log IP addresses, do not link usernames to wallets on-chain. Unencrypted memo content is never retained in memory, and encrypted memos are permanently wiped 24 hours after being claimed.
+- Never holds your main wallet keys or your claim keys.
+- Never requires senders to connect a wallet.
+- Never stores unencrypted private messages.
+- Never links your username to your wallet on-chain.
+- Never logs IP addresses tied to on-chain identities.
 
-## What VeerTx Never Does
-- Never has access to your main wallet's private keys or your stealth receiver keys
-- Never requires senders to connect a wallet
-- Never stores unencrypted memos
-- Never links your username to your wallet on-chain
-- Never logs IP addresses or links them to on-chain identities
-- Never exposes sweep transactions unnecessarily, we use dedicated RPC endpoints separate from public endpoints
+## Private messages
 
-## Audits
-Professional third-party audit is on the roadmap. Currently all security review is internal. Bug reports welcome, contact us on X @VeerTx or open a ticket on Discord: https://discord.gg/tNf5pDVVCe
+The optional private message a sender can attach is encrypted before it is stored. Only the receiver can read it. It is permanently removed 24 hours after the payment is claimed. The content is never logged and never sent in Telegram alerts.
 
-## Ghost Memo Security
-Messages encrypted with AES-256-GCM before storage. Auto-deleted 24 hours after claim. Memo content is never logged.
+## Reporting a problem
+
+If you find a security issue, please tell us.
+
+- Discord: https://discord.gg/tNf5pDVVCe
+- Email: hello@veertx.com
+
+We welcome responsible disclosure.
+
+## More
+
+- [Audits](audits.md)
+- [Security process](security-process.md)
+- [Privacy model](../technical/privacy-model.md)

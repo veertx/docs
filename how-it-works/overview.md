@@ -1,12 +1,49 @@
-# How VeerTx Works
+# Overview
 
-VeerTx breaks the on-chain link between sender and receiver using stealth addresses and a ZK privacy pool.
+VeerTx hides the link between the sender and the receiver of a crypto payment. It does this with stealth addresses and a zero-knowledge privacy pool.
 
-## The Flow
+Here is the full flow in four steps.
 
-1. **Receiver sets up** - connects wallet, signs a message, gets a VeerLink (veertx.com/pay/username)
-2. **Sender pays** - visits the link, sends SOL or USDC to a one-time deposit address. No wallet connection required.
-3. **Funds anonymized** - routed through Privacy Cash ZK pool (10-45 minutes)
-4. **Receiver claims** - connects wallet, signs to prove ownership, sweeps funds to any wallet
+## Step 1: The receiver sets up a link
 
-On-chain: sender sees a random deposit address. Receiver claims from a different stealth address. No link between them.
+The receiver connects a wallet and signs one message. This creates their private payment keys inside their browser. The keys never leave the device.
+
+They pick a username and get a payment link:
+
+```
+veertx.com/pay/yourname
+```
+
+[SCREENSHOT: setup page showing the connected wallet and the chosen username]
+
+## Step 2: The sender pays
+
+The sender opens the link. They pick a token and an amount. VeerTx shows them a one-time deposit address.
+
+The sender pays that address from any wallet, exchange, or app. They do not connect a wallet. They do not make an account.
+
+[SCREENSHOT: pay page showing the amount, the fee breakdown, and the deposit address with a QR code]
+
+## Step 3: The funds are made private
+
+The payment is routed through a zero-knowledge privacy pool. This breaks the on-chain link between the deposit address and the receiver.
+
+This step takes about 10 to 45 minutes. The delay is on purpose. It makes timing analysis harder.
+
+## Step 4: The receiver claims
+
+The receiver connects the same wallet they used at setup and signs to prove ownership. The funds are then swept to any wallet they choose.
+
+[SCREENSHOT: claim page showing one or more payments ready to claim]
+
+## What this looks like on-chain
+
+- The sender sees a transfer to a random one-time address.
+- The receiver claims from a different, unrelated address.
+- There is no on-chain link between the two.
+
+## Next
+
+- [Supported chains](supported-chains.md)
+- [Fees and limits](fees-and-limits.md)
+- [Receive payments](../guides/receive-payments.md)

@@ -1,31 +1,42 @@
 # Roadmap
 
-## Current Architecture
-VeerTx currently operates as a trusted privacy relay. The server handles stealth address computation and memo encryption. We are transparent about this, see [Security & Transparency](security/overview.md).
+This is where VeerTx is heading. Items are not in strict order, and plans can change.
 
-## Planned: Client-Side ECDH (True Trustless Privacy)
-The most significant planned upgrade is moving stealth address generation entirely to the sender's browser.
+## Done
 
-**What changes:**
-- Sender's browser will compute the ECDH stealth address derivation locally
-- Server will never see the link between sender and receiver
-- Ghost Memo encryption will move to the browser, server receives only ciphertext
+- **Solana live.** Private SOL and USDC payments on mainnet.
+- **Base live.** Private ETH and USDC payments on mainnet.
+- **One link, many chains.** A single username can receive on more than one chain.
+- **Private message support.** Optional encrypted messages with a payment.
+- **Payment tracker.** Senders can follow a payment through to claim.
 
-**What this achieves:**
-- Server compromise or subpoena cannot expose sender/receiver relationships
-- VeerTx becomes a true trustless privacy layer, not a trusted relay
-- Privacy guarantees become cryptographic, not policy-based
+## Planned: stronger privacy
 
-This is a top architectural priority after the current version stabilizes.
+The biggest planned upgrade moves more of the work into the browser.
 
-## Planned: Multi-Chain Expansion
-After Solana is fully stable and audited, expansion to:
-- **Base**: low fees, large USDC volume, likely compatible with Privacy Pools protocol
-- **Ethereum L1**: high-value transactions where fees are acceptable
-- **More chains**: based on user demand
+Today, the one-time address for an incoming payment is worked out on the VeerTx side. The plan is to move that computation to the sender and receiver, so that VeerTx infrastructure can no longer see the link between them.
 
-## Planned: Professional Security Audit
-A third-party audit by a reputable firm (OtterSec, Cantina, or equivalent) is on the roadmap once the client-side ECDH migration is complete. Auditing the current architecture and the upgraded trustless version together.
+What this would achieve:
 
-## Planned: Burner Links
-One-time payment links that self-destruct after a single use. Generate a link, get paid once, link permanently deleted.
+- A server problem or legal demand could not expose who paid whom.
+- Privacy would become a cryptographic guarantee, not a policy promise.
+
+## Planned: reduce the amount fingerprint
+
+Because the receiver gets the exact amount requested, the amount can act as a hint that links a deposit to a withdrawal. We plan to reduce this. See [Privacy model](technical/privacy-model.md) for the full explanation.
+
+## Planned: more chains
+
+After the current chains are fully stable, we plan to expand to more networks based on demand. Ethereum main network is on the list.
+
+## Planned: burner links
+
+One-time payment links that work once and then expire. Generate a link, get paid once, and the link is gone.
+
+## Planned: agent payments
+
+An API and an MCP server so applications and AI agents can pay privately. See [Agent API](developers/agent-api.md).
+
+## Planned: professional audit
+
+A third-party audit by a reputable firm, with the results published.
