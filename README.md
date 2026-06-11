@@ -1,28 +1,20 @@
-# VeerTx Documentation
+# What is VeerTx?
 
-Private payments on Solana. Send or receive SOL and USDC without linking wallets.
+<figure><img src=".gitbook/assets/veertx_header3.png" alt=""><figcaption></figcaption></figure>
 
-## Quick Links
-- [How It Works](how-it-works/overview.md)
-- [For Receivers](how-it-works/for-receivers.md)
-- [For Senders](how-it-works/for-senders.md)
-- [Technical Architecture](technical/stealth-address.md)
-- [Transaction Lifecycle](technical/transaction-lifecycle.md)
-- [Agent API](developers/agent-api.md)
-- [Security & Transparency](security/overview.md)
-- [Roadmap](roadmap.md)
+VeerTx is a non-custodial privacy payment router built exclusively for the Solana network. It allows users to send and receive SOL and USDC without exposing their wallet balances or transaction history to the public.
 
-## What is VeerTx?
-VeerTx is a non-custodial privacy payment router on Solana. Receivers get a permanent payment link (veertx.com/pay/username). Senders pay through it. Neither party can see the other's wallet on-chain.
+### The Problem with Public Blockchains&#x20;
 
-No token. No sign-up for senders. 1.5% fee. Live on mainnet.
+Solana is a public ledger. By default, every time you send or receive a payment, the other person can see exactly how much money is in your wallet and every transaction you have ever made. You would never show a cashier your entire bank statement just to buy a coffee, but that is exactly how standard crypto transactions work today.
 
-## Community & Links
+### The VeerTx Solution&#x20;
 
-- **Website:** [veertx.com](https://veertx.com)
-- **Twitter / X:** [@VeerTx](https://x.com/VeerTx)
-- **Discord:** [discord.gg/tNf5pDVVCe](https://discord.gg/tNf5pDVVCe)
-- **Telegram:** [t.me/VeerTx](https://t.me/VeerTx)
-- **GitBook (full docs):** [veertx.gitbook.io/veertx-docs](https://veertx.gitbook.io/veertx-docs/)
+VeerTx solves this by permanently severing the on-chain link between the sender and the receiver. When you use a VeerTx payment link, the funds do not travel directly from Wallet A to Wallet B. Instead, the payment is routed through our automated privacy pool system. This ensures that the sender only sees a temporary deposit address, and the receiver gets their funds distributed from the main pool.
 
-Built solo. Talk to the dev: [@einzxx](https://x.com/einzxx)
+### Core Features
+
+* True Financial Privacy: Senders and receivers never interact directly on the blockchain.
+* Non-Custodial Routing: Your funds are automatically processed through smart routing. We do not hold your SOL or USDC.
+* Seamless Payment Links: Generate a single link to receive payments from anyone at any time (Limits: 0.7 to 20 SOL | 50 to 2000 USDC).
+* Automated by Helius: We use enterprise-grade Helius webhooks to monitor deposits and sweep funds securely behind the scenes.
