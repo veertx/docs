@@ -30,7 +30,7 @@
 
 ## Developers
 
-* [Agent API](developers/agent-api.md)
+* [Private Agent Payments](developers/agent-api.md)
 
 ## More
 
